@@ -1,0 +1,47 @@
+[project]
+name = "butler"
+version = "0.1.0"
+description = "自托管的个人 AI 助手：以微信为入口，核心是 agent，邮箱等能力都是插件"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "openai>=3.29.0",
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.15.0",
+]
+
+[project.scripts]
+butler = "butler:main"
+
+[build-system]
+requires = ["uv_build>=0.12.11,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.414",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.17.0",
+]
+
+[tool.ruff]
+line-length = 100
+# 设计文档里的代码块是伪代码，不检查也不格式化
+extend-exclude = ["docs"]
+
+[tool.ruff.lint]
+# ASYNC：抓出 async 函数里的阻塞调用（比如 time.sleep、同步读文件）
+select = ["E", "W", "F", "I", "B", "UP", "ASYNC"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+# venv 只负责找依赖包；Python 版本要单独指定，否则 pyright 会用系统默认的 python3（macOS 自带的是 3.9）
+pythonVersion = "3.13"
+typeCheckingMode = "standard"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# async 测试函数不用再加 @pytest.mark.asyncio
+asyncio_mode = "auto"

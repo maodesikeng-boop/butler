@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# 环境变量和密钥
+.env
+.env.*
+!.env.example
+
+# 本地工具配置
+mise.local.toml
+
+# 系统和编辑器
+.DS_Store
+.vscode/
+.idea/
