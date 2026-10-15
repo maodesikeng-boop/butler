@@ -32,7 +32,8 @@ extend-exclude = ["docs"]
 
 [tool.ruff.lint]
 # ASYNC：抓出 async 函数里的阻塞调用（比如 time.sleep、同步读文件）
-select = ["E", "W", "F", "I", "B", "UP", "ASYNC"]
+# A：变量名不能和 Python 内置的名字重复（比如 str、list、id）
+select = ["E", "W", "F", "I", "B", "UP", "ASYNC", "A"]
 
 [tool.pyright]
 venvPath = "."

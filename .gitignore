@@ -18,5 +18,8 @@ mise.local.toml
 
 # 系统和编辑器
 .DS_Store
-.vscode/
+# VS Code：只提交共享的设置和推荐扩展，其余（个人状态）不提交
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/

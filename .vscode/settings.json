@@ -1,0 +1,14 @@
+{
+	"[python]": {
+		// 保存时用 Ruff 格式化代码（规则在 pyproject.toml 里，和 make check、CI 是同一套）
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			// 保存时只排好 import 的顺序。不开 source.fixAll.ruff：它会把"暂时没用到"的 import 直接删掉
+			"source.organizeImports.ruff": "explicit"
+		}
+	},
+	// 用项目自己的虚拟环境，Ruff 也从里面取，这样版本和 make check、CI 一致
+	"python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+	"ruff.importStrategy": "fromEnvironment"
+}
