@@ -1,9 +1,9 @@
 import pytest
-from butler.model.scripted import ModelRequest, ScriptedModel
 from pydantic import ValidationError
 
 from butler.messages import AssistantMessage, ToolCall, UserMessage
 from butler.model.base import ModelClient, ModelReply, Usage
+from butler.model.scripted import ModelRequest, ScriptedModel
 from butler.tools.base import ToolSpec
 
 
