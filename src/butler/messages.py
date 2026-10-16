@@ -30,8 +30,8 @@ class ToolMessage(FrozenModel):
     content: str
 
 
-message = Annotated[UserMessage | AssistantMessage | ToolMessage, Field(discriminator="role")]
+Message = Annotated[UserMessage | AssistantMessage | ToolMessage, Field(discriminator="role")]
 
 
 class Messages(BaseModel):
-    content: list[message] = []
+    content: list[Message] = []

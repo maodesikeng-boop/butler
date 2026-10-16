@@ -44,3 +44,4 @@ Sprint 1 结束时的样子：
 
 - [设计文档 01：Agent 循环](docs/design/01-agent-loop.md)
 - [ADR-0001：技术栈选型](docs/adr/0001-tech-stack.md)
+- [ADR-0002：系统提示词单独传给模型](docs/adr/0002-system-prompt-separate.md)
